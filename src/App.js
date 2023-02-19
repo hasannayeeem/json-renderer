@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import RenderComponent from './renderFunction/RenderComponent';
 
 function App() {
+  const [elements, setElements] = useState([])
+  useEffect(()=>{
+    fetch('initialData.json').then(res => res.json()).then(data=>setElements(data))
+  },[]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      {elements?.map((element)=>(
+        <RenderComponent element={element} />
+      ))}
     </div>
   );
 }
