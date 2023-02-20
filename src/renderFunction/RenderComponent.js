@@ -12,7 +12,6 @@ const keysToComponentMap = {
     text: Text,
     image: Image,
     subscription: Subscription
-
 }
 function RenderComponent({element}) {
     if(typeof keysToComponentMap[element.type] !== 'undefined'){
