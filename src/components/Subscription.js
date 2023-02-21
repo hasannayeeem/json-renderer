@@ -1,20 +1,23 @@
 import React from "react";
+import Button from "./Button";
+import Form from "./Form";
 
 function Subscription({ form }) {
   console.log("form", form, "style", form.style);
   return (
-    <form style={{ ...form.style }}>
+    <Form style={form.style}>
       {form.fields.items.map((field) => (
         <input
+          style={{...form.fields.style}}
           name={field.name}
           label={field.label}
           placeholder={field.attr.placeholder}
         />
       ))}
-      <button style={{ ...form.submitButton.style }}>
+      <Button style={form.submitButton.style}>
         {form.submitButton.content}
-      </button>
-    </form>
+      </Button>
+    </Form>
   );
 }
 

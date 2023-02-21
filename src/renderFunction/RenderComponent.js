@@ -20,7 +20,8 @@ function RenderComponent({element}) {
             {
                 style: element.style,
                 attr: element.attr,
-                form: element.form
+                form: element.form,
+                element: element
             },
             element.content ? element.content : null
         )

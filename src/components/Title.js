@@ -1,10 +1,14 @@
 import React from "react";
-function Title({ children, style }) {
+import exportStyle from "../utils/style.export";
+function Title({ children, style, element }) {
+  const Heading = element.level;
+  const tagName = Heading;
+  exportStyle({tagName}, style)
   return (
-    <>
-      {/* <h1 style={{...style}}>{children}</h1> */}
-      <h1 style={{ ...style }} dangerouslySetInnerHTML={{ __html: children }} />
-    </>
+    <Heading
+      // style={{ ...style }}
+      dangerouslySetInnerHTML={{ __html: children }}
+    />
   );
 }
 
