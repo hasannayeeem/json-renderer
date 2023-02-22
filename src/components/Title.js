@@ -6,7 +6,6 @@ function Title({ children, style, element }) {
   exportStyle({tagName}, style)
   return (
     <Heading
-      // style={{ ...style }}
       dangerouslySetInnerHTML={{ __html: children }}
     />
   );

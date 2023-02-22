@@ -1,20 +1,18 @@
 import React, { useId } from "react";
 import exportStyle from "../utils/style.export";
 
-function Image({ attr, style, element }) {
+function Input({ field, style }) {
   const date = new Date().getUTCMilliseconds().toString();
   const id = useId().replace(/:/g, `${date}`);
-  const className = element.type + id;
-  exportStyle({className}, style)
-  
+  const className = `input${id}`;
+  exportStyle({ className }, style);
   return (
-    <img
-      // style={{ ...style }}
+    <input
+      name={field.name}
       className={className}
-      src={attr.src}
-      alt={attr.alt}
+      placeholder={field.attr.placeholder}
     />
   );
 }
 
-export default Image;
+export default Input;
