@@ -2,12 +2,12 @@ import React from "react";
 import exportStyle from "../utils/style.export";
 
 function Text({ children, style, element }) {
-  const className = element.type;
-  exportStyle({className}, style)
+  const selector = element.type;
+  exportStyle(selector, style)
   return (
     <p
       // style={{ ...style }}
-      className={className}
+      className={selector}
       dangerouslySetInnerHTML={{ __html: children }}
     />
   );

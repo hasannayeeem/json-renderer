@@ -7,7 +7,6 @@ const camelCaseToKebabCase = (camelCaseObj) => {
       );
       const property = kebabCase;
       const value = camelCaseObj[key];
-      console.log(`${property}(property):${value}(value);`);
       return `${property}:${value};`;
     })
     .join("\n");

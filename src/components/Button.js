@@ -1,11 +1,12 @@
 import React from 'react'
+import uniqueId from '../utils/getUniqueKey';
 import exportStyle from '../utils/style.export'
 
 function Button({children, style}) {
-  const tagName = `button`;
-  exportStyle({tagName}, style)
+  const selector = uniqueId();
+  exportStyle(selector, style)
   return (
-    <button>{children}</button>
+    <button className={selector}>{children}</button>
   )
 }
 
