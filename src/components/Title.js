@@ -1,8 +1,9 @@
 import React from "react";
+import uniqueId from "../utils/getUniqueKey";
 import exportStyle from "../utils/style.export";
 function Title({ children, style, element }) {
   const Heading = element.level;
-  const selector = `${Heading}${Math.random().toString(36).substring(2, 8)}`;
+  const selector = uniqueId();
   exportStyle(selector, style)
   return (
     <Heading
